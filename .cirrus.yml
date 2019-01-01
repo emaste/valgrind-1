@@ -1,20 +1,21 @@
-freebsd_11_task:
-  freebsd_instance:
-    image: freebsd-11-2-release-amd64
-  install_script: pkg install -y autoconf automake gmake
-  script:
-    - sh autogen.sh
-    - ./configure
-    - gmake
+#freebsd_11_task:
+#  freebsd_instance:
+#    image: freebsd-11-2-release-amd64
+#  install_script: pkg install -y autoconf automake gmake
+#  script:
+#    - sh autogen.sh
+#    - ./configure
+#    - gmake
 
-freebsd_12_task:
-  freebsd_instance:
-    image: freebsd-12-0-release-amd64
-  install_script: pkg install -y autoconf automake gmake
-  script:
-    - sh autogen.sh
-    - ./configure
-    - gmake
+#freebsd_12_task:
+#  freebsd_instance:
+#    image: freebsd-12-0-release-amd64
+#  install_script: pkg install -y
+#    autoconf automake gmake
+#  script:
+#    - sh autogen.sh
+#    - ./configure
+#    - gmake
 
 debian_stable_task:
   container:
@@ -22,13 +23,13 @@ debian_stable_task:
   setup_script:
     - apt-get update
     - apt-get install -y
-      autoconf automake make
+      autoconf automake gcc make
   script:
     - sh autogen.sh
     - ./configure
-    - gmake
+    - make
 
 # elftoolchain Debian packages
-#      binutils bison bmake curl flex g++ gcc git
+#      binutils bison bmake curl flex g++ git
 #      libarchive-dev libbsd-dev libc6-dev libexpat1-dev lsb-release
 #      m4 perl python-yaml sharutils zlib1g-dev
