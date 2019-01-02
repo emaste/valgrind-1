@@ -23,7 +23,7 @@ debian_stable_task:
   setup_script:
     - apt-get update
     - apt-get install -y
-      autoconf automake gcc make
+      autoconf automake g++ gcc make
   script:
     - sh autogen.sh
     - ./configure
