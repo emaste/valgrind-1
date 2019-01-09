@@ -4,7 +4,7 @@ freebsd_11_task:
   install_script: pkg install -y autoconf automake gmake
   script:
     - sh autogen.sh
-    - ./configure
+    - ./configure --enable-only64bit
     - gmake
 
 freebsd_12_task:
@@ -14,7 +14,7 @@ freebsd_12_task:
     autoconf automake gmake
   script:
     - sh autogen.sh
-    - ./configure
+    - ./configure --enable-only64bit
     - gmake
 
 debian_stable_task:
